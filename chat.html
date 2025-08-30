@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="is">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Inga Birna – Andleg einkaþjálfun</title>
+  <style>
+    :root{
+      --bg:#F5F1EA;
+      --ink:#0E3B43;
+      --muted:#657A76;
+      --accent:#C7A23A;
+      --card:#ffffff;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:1080px;margin:0 auto;padding:0 20px}
+    header{position:sticky;top:0;z-index:10;background:rgba(245,241,234,.8);backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid #eadfcf}
+    .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+    .brand{font-weight:800;letter-spacing:.2px}
+    .nav a{padding:.5rem .75rem;border-radius:10px}
+    .cta{background:var(--ink);color:#fff}
+    .cta:hover{opacity:.92}
+    /* Hero */
+    .hero{min-height:72vh;display:grid;place-items:center;position:relative;overflow:hidden}
+    .hero::before{
+      content:"";position:absolute;inset:-20%;
+      background:radial-gradient(60% 60% at 20% 20%, #c7a23a22, transparent),
+                 radial-gradient(50% 50% at 80% 30%, #0e3b4320, transparent),
+                 radial-gradient(40% 40% at 50% 80%, #8fa6a120, transparent);
+      transform:scale(1);z-index:0
+    }
+    .hero .inner{position:relative;z-index:1;text-align:center;padding:48px 0}
+    h1{font-size:clamp(28px,5vw,48px);line-height:1.15;margin:0 0 .6rem}
+    .sub{max-width:760px;margin:0 auto 1.25rem;color:var(--muted)}
+    .btns{display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap}
+    .btn{padding:.85rem 1.1rem;border-radius:12px;border:1px solid var(--ink);font-weight:600}
+    .btn.primary{background:var(--accent);border-color:var(--accent);color:#1a1a1a}
+    .btn.secondary{background:#fff}
+    /* Sections */
+    section{padding:56px 0}
+    .grid{display:grid;gap:20px}
+    .cards{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+    .card{background:var(--card);border:1px solid #eadfcf;border-radius:16px;padding:18px 16px;box-shadow:0 6px 16px rgba(0,0,0,.04)}
+    h2{font-size:clamp(22px,3.5vw,32px);margin:0 0 .75rem}
+    .muted{color:var(--muted)}
+    /* Process */
+    .steps{counter-reset:step}
+    .step{display:flex;gap:14px;align-items:flex-start}
+    .dot{min-width:34px;height:34px;border-radius:999px;background:var(--accent);display:grid;place-items:center;font-weight:700}
+    /* FAQ */
+    details{background:#fff;border:1px solid #eadfcf;border-radius:12px;padding:12px 14px}
+    details+details{margin-top:10px}
+    summary{cursor:pointer;font-weight:600}
+    /* Contact */
+    form{display:grid;gap:12px}
+    input,textarea{width:100%;padding:.9rem;border:1px solid #e1d7c6;border-radius:12px;background:#fff}
+    textarea{min-height:120px;resize:vertical}
+    footer{padding:28px 0;border-top:1px solid #eadfcf;color:#6a7a78}
+    /* Small helpers */
+    .center{text-align:center}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">Inga Birna • Þjálfun</div>
+      <nav>
+        <a href="#um">Um mig</a>
+        <a href="#thjonusta">Þjónusta</a>
+        <a href="#umsagnir">Umsagnir</a>
+        <a href="#ferli">Ferlið</a>
+        <a href="#faq">Spurningar</a>
+        <a class="cta" href="#samband">Bóka fund</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container inner">
+        <h1>Finndu jafnvægið aftur.</h1>
+        <p class="sub">Andleg einkaþjálfun sem hjálpar þér að fá meiri ró, sjálfstraust og skýr markmið – á þínum hraða með hlýju og fagmennsku.</p>
+        <div class="btns">
+          <a href="#samband" class="btn primary">Bókaðu kynningartíma</a>
+          <a href="#um" class="btn secondary">Lesa um nálgun</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Um mig -->
+    <section id="um">
+      <div class="container">
+        <h2 class="center">Um mig</h2>
+        <div class="card">
+          <p>Ég heiti <strong>Inga Birna Sigurðar</strong>. Nálgun mín byggir á hlustun, einföldum verkfærum og eftirfylgni. Markmiðið er að þú finnir þitt innra jafnvægi og bætir daglegt líf með litlum, raunhæfum skrefum.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Þjónusta -->
+    <section id="thjonusta">
+      <div class="container">
+        <h2 class="center">Þjónusta</h2>
+        <div class="grid cards">
+          <div class="card">
+            <h3>Einkaþjálfun</h3>
+            <p class="muted">60 mín. samtal, á staðnum eða online. Við kortleggjum stöðu, setjum markmið og veljum verkfæri.</p>
+          </div>
+          <div class="card">
+            <h3>Fjarleiðsögn</h3>
+            <p class="muted">Vikuleg eftirfylgni með stuttum check-in og leiðbeiningum til að halda þér á réttri leið.</p>
+          </div>
+          <div class="card">
+            <h3>Vinnustofur</h3>
+            <p class="muted">Smáhópar fyrir vinnustaði eða vini; fókus á streitustjórnun, markmiðasetningu og venjur.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Umsagnir -->
+    <section id="umsagnir">
+      <div class="container">
+        <h2 class="center">Umsagnir</h2>
+        <div class="grid cards">
+          <div class="card"><em>„Ég fann loksins ró og skýrleika í daglegu lífi.“</em> – S.</div>
+          <div class="card"><em>„Einföld verkfæri sem ég nota á hverjum degi.“</em> – K.</div>
+          <div class="card"><em>„Fékk sjálfstraust til að taka næstu skref.“</em> – H.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ferlið -->
+    <section id="ferli">
+      <div class="container">
+        <h2 class="center">Ferlið</h2>
+        <div class="grid" style="gap:16px">
+          <div class="card step">
+            <div class="dot">1</div>
+            <div><strong>Kynningarfundur</strong><br/><span class="muted">Stutt viðtal, væntingar og næstu skref.</span></div>
+          </div>
+          <div class="card step">
+            <div class="dot">2</div>
+            <div><strong>Áætlun</strong><br/><span class="muted">Sérsniðin markmið og einföld verkfæri.</span></div>
+          </div>
+          <div class="card step">
+            <div class="dot">3</div>
+            <div><strong>Eftirfylgni</strong><br/><span class="muted">Regluleg endurmat og aðlögun.</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq">
+      <div class="container">
+        <h2 class="center">Algengar spurningar</h2>
+        <details class="container card">
+          <summary>Hvernig bóka ég tíma?</summary>
+          <p>Skrifaðu mér í formið hér fyrir neðan eða sendu tölvupóst. Ég svara samdægurs.</p>
+        </details>
+        <details class="container card">
+          <summary>Er þetta online eða á staðnum?</summary>
+          <p>Bæði er í boði – veljum það sem hentar þér.</p>
+        </details>
+        <details class="container card">
+          <summary>Hvað kostar?</summary>
+          <p>Fáðu tilboð eftir stuttan kynningarfund.</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="samband">
+      <div class="container">
+        <h2 class="center">Hafðu samband</h2>
+        <div class="card">
+          <form id="form">
+            <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px">
+              <input aria-label="Nafn" name="nafn" placeholder="Nafn" required />
+              <input aria-label="Netfang" name="email" placeholder="Netfang" type="email" required />
+              <input aria-label="Sími" name="simi" placeholder="Sími" />
+            </div>
+            <textarea name="skilabod" placeholder="Segðu mér stuttlega frá þínum þörfum..." required></textarea>
+            <button class="btn primary" type="submit">Senda fyrirspurn</button>
+          </form>
+          <p id="thanks" class="muted" style="display:none;margin-top:10px">Takk fyrir – ég hef sambandi fljótlega.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container center">
+      © <span id="year"></span> Inga Birna • Andleg einkaþjálfun • Reykjavík
+    </div>
+  </footer>
+
+  <script>
+    // Smooth scroll for internal links
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click',e=>{
+        const id=a.getAttribute('href').slice(1);
+        const el=document.getElementById(id);
+        if(el){ e.preventDefault(); el.scrollIntoView({behavior:"smooth"}); }
+      });
+    });
+
+    // Simple form "success"
+    const f=document.getElementById('form');
+    const thanks=document.getElementById('thanks');
+    f.addEventListener('submit', (e)=>{
+      e.preventDefault();
+      thanks.style.display='block';
+      f.reset();
+    });
+
+    // Year
+    document.getElementById('year').textContent=new Date().getFullYear();
+  </script>
+</body>
+</html>

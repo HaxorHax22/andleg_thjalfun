@@ -1,0 +1,1298 @@
+<!DOCTYPE html>
+<html lang="is">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inga Birna – Andleg einkaþjálfun</title>
+    <style>
+        :root {
+            --sand: #F5F1EA;
+            --deep-teal: #0E3B43;
+            --sage: #8FA6A1;
+            --gold: #C7A23A;
+            --white: #FFFFFF;
+
+            --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            --transition-speed: 0.4s;
+            --section-padding: 6rem 2rem;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px; /* Offset for sticky nav */
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--sand);
+            color: var(--deep-teal);
+            line-height: 1.7;
+            font-size: 17px;
+        }
+        
+        body.nav-open {
+            overflow: hidden;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+        h1, h2, h3 {
+            font-weight: 700;
+            line-height: 1.2;
+            color: var(--deep-teal);
+            margin-bottom: 1rem;
+        }
+
+        h1 { font-size: 3.5rem; }
+        h2 { font-size: 2.5rem; text-align: center; margin-bottom: 3rem; }
+        h3 { font-size: 1.5rem; }
+
+        p {
+            margin-bottom: 1rem;
+            max-width: 65ch;
+        }
+
+        section {
+            padding: var(--section-padding);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* --- New Animation Styles --- */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(40px) scale(0.95) rotateX(-10deg);
+            transition: opacity 0.8s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        .animate-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0) scale(1) rotateX(0);
+        }
+
+        /* --- Navigation --- */
+        .main-header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background-color: rgba(245, 241, 234, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 1rem 0;
+            transition: box-shadow var(--transition-speed) ease;
+        }
+
+        .main-header.scrolled {
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        .main-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo a {
+            font-weight: 800;
+            font-size: 1.5rem;
+            text-decoration: none;
+            color: var(--deep-teal);
+            z-index: 1001;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            list-style: none;
+            gap: 1.8rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--deep-teal);
+            font-weight: 500;
+            position: relative;
+            padding: 0.5rem 0;
+            transition: color var(--transition-speed);
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--gold);
+            transform: scaleX(0);
+            transform-origin: bottom right;
+            transition: transform var(--transition-speed) ease-out;
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active-link::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+        
+        .nav-links a:hover,
+        .nav-links a.active-link {
+            color: var(--deep-teal);
+        }
+        
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            z-index: 1001;
+        }
+        
+        .hamburger-line {
+            width: 30px;
+            height: 3px;
+            background-color: var(--deep-teal);
+            margin: 5px 0;
+            transition: all var(--transition-speed) ease;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.8rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all var(--transition-speed) ease;
+            cursor: pointer;
+            border: 2px solid transparent;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary {
+            background-color: var(--gold);
+            color: var(--white);
+        }
+        .btn-primary:hover {
+            background-color: #b38f34;
+            transform: translateY(-3px);
+            box-shadow: 0 7px 20px rgba(199, 162, 58, 0.3);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--deep-teal);
+            border-color: var(--sage);
+        }
+        .btn-secondary:hover {
+            background-color: var(--sage);
+            color: var(--white);
+            transform: translateY(-3px);
+            box-shadow: 0 7px 20px rgba(143, 166, 161, 0.3);
+        }
+        
+        :focus-visible {
+            outline: 2px solid var(--gold);
+            outline-offset: 3px;
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+
+        #particle-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            color: var(--deep-teal);
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero h1 .word {
+            display: inline-block;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fade-in-up 0.6s forwards;
+        }
+        
+        @keyframes fade-in-up {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-subtext {
+            font-size: 1.25rem;
+            color: var(--deep-teal);
+            margin-bottom: 2.5rem;
+        }
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .typewriter {
+            border-right: 3px solid var(--gold);
+            animation: blink-caret 0.75s step-end infinite;
+            color: var(--gold);
+            font-weight: 700;
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent; }
+            50% { border-color: var(--gold); }
+        }
+
+        /* --- Um mig Section --- */
+        .about-card {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 4rem;
+            align-items: center;
+            background-color: var(--white);
+            padding: 4rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+        
+        .about-image-placeholder {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background-color: var(--sage);
+            background-image: linear-gradient(135deg, var(--sage) 0%, var(--sand) 100%);
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(143, 166, 161, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 20px rgba(143, 166, 161, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(143, 166, 161, 0); }
+        }
+
+        /* --- Services Section --- */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            perspective: 1000px;
+        }
+
+        .service-card {
+            background-color: var(--white);
+            padding: 2.5rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.03);
+            border: 1px solid #eee;
+            transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+        }
+        .service-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 18px 35px rgba(0,0,0,0.1);
+        }
+        .service-card h3 {
+            color: var(--gold);
+        }
+
+        /* --- Testimonials Section --- */
+        #umsagnir {
+            background-color: var(--deep-teal);
+            color: var(--white);
+        }
+        #umsagnir h2 {
+            color: var(--white);
+        }
+        
+        .testimonial-slider {
+            position: relative;
+            max-width: 800px;
+            margin: auto;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+        
+        .testimonial-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        
+        .testimonial {
+            min-width: 100%;
+            box-sizing: border-box;
+            padding: 3rem;
+            text-align: center;
+        }
+        
+        .testimonial blockquote {
+            font-size: 1.2rem;
+            font-style: italic;
+            border: none;
+            margin: 0 0 1rem 0;
+        }
+        
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--gold);
+        }
+        
+        .slider-dots {
+            text-align: center;
+            margin-top: 1.5rem;
+        }
+        
+        .dot {
+            cursor: pointer;
+            height: 12px;
+            width: 12px;
+            margin: 0 5px;
+            background-color: var(--sage);
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color var(--transition-speed) ease;
+        }
+        
+        .dot.active, .dot:hover {
+            background-color: var(--gold);
+        }
+
+        /* --- Process Section --- */
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            text-align: center;
+        }
+        .step {
+            position: relative;
+        }
+        .step-number {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: var(--sage);
+            color: var(--white);
+            font-size: 1.8rem;
+            font-weight: 700;
+            display: grid;
+            place-items: center;
+            margin: 0 auto 1.5rem auto;
+        }
+        .step h3 { color: var(--deep-teal); }
+        
+        /* --- FAQ Section --- */
+        .faq-accordion {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .faq-item {
+            background-color: var(--white);
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            border: 1px solid #e0dcd5;
+            transition: box-shadow var(--transition-speed);
+        }
+        .faq-item:hover {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        .faq-item .faq-question {
+            font-size: 1.15rem;
+            font-weight: 600;
+            padding: 1.5rem;
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: color var(--transition-speed);
+        }
+        .faq-item .faq-question:hover {
+            color: var(--gold);
+        }
+        .faq-item .faq-answer-wrapper {
+            overflow: hidden;
+            transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .faq-item .faq-answer {
+            padding: 0 1.5rem 1.5rem;
+            color: #555;
+        }
+        .faq-item.is-open .faq-question {
+            color: var(--gold);
+        }
+        .faq-icon {
+            flex-shrink: 0;
+            margin-left: 1rem;
+            transition: transform var(--transition-speed) ease;
+            color: var(--sage);
+        }
+        .faq-item.is-open .faq-icon {
+            transform: rotate(180deg);
+        }
+        
+        /* --- Contact Section --- */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+            text-align: left;
+        }
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+        .contact-form label {
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        .contact-form input,
+        .contact-form textarea {
+            padding: 0.9rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-family: var(--font-family);
+            font-size: 1rem;
+            background-color: var(--white);
+        }
+        .contact-form textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        #success-message {
+            display: none;
+            text-align: center;
+            padding: 2rem;
+            background-color: var(--sage);
+            color: var(--white);
+            border-radius: 8px;
+        }
+        .contact-info-wrapper {
+            background-color: var(--white);
+            padding: 2.5rem;
+            border-radius: 10px;
+            position: relative;
+        }
+        .contact-info-wrapper::before {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            border-radius: 12px;
+            background: linear-gradient(120deg, var(--gold), var(--sage), var(--gold));
+            background-size: 200% 200%;
+            animation: subtle-gradient 5s ease infinite;
+            z-index: -1;
+        }
+        .contact-info-wrapper h3 {
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+        }
+        .contact-methods {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            align-items: flex-start;
+            margin-bottom: 2.5rem;
+        }
+        .contact-method {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .contact-method a {
+            font-size: 1.1rem;
+            font-weight: 500;
+            text-decoration: none;
+            color: var(--deep-teal);
+            transition: color var(--transition-speed);
+        }
+        .contact-method a:hover {
+            color: var(--gold);
+        }
+        .contact-method svg {
+            width: 24px;
+            height: 24px;
+            color: var(--sage);
+            flex-shrink: 0;
+        }
+        .social-links {
+            display: flex;
+            justify-content: flex-start;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        .social-link {
+            color: var(--deep-teal);
+            text-decoration: none;
+            transition: color var(--transition-speed), transform var(--transition-speed);
+            position: relative;
+            overflow: hidden;
+        }
+        .social-link:hover {
+            color: var(--gold);
+            transform: scale(1.1) translateY(-3px);
+        }
+        .social-link svg {
+            width: 32px;
+            height: 32px;
+        }
+
+        /* --- Footer --- */
+        .main-footer {
+            background-color: var(--deep-teal);
+            color: var(--sand);
+            text-align: center;
+            padding: 3rem 1rem;
+        }
+        .main-footer a {
+            color: var(--sand);
+        }
+        
+        /* --- Mobile Optimizations --- */
+        @media (max-width: 992px) {
+            .about-card {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .about-image-placeholder {
+                margin: 0 auto;
+            }
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            h2 { font-size: 2rem; }
+            section { padding: 4rem 1rem; }
+
+            .nav-links {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background-color: var(--sand);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 2.5rem;
+                transform: translateX(100%);
+                transition: transform var(--transition-speed) ease-in-out;
+            }
+            
+            .nav-links.nav-open {
+                transform: translateX(0);
+            }
+            
+            .nav-links a {
+                font-size: 1.5rem;
+            }
+            
+            .nav-links .btn {
+                font-size: 1.2rem;
+            }
+
+            .hamburger {
+                display: block;
+            }
+            
+            .hamburger.toggled .hamburger-line:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+            .hamburger.toggled .hamburger-line:nth-child(2) {
+                opacity: 0;
+            }
+            .hamburger.toggled .hamburger-line:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+            
+            .services-grid,
+            .process-steps {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-card {
+                padding: 2rem;
+            }
+            .about-image-placeholder {
+                width: 200px;
+                height: 200px;
+            }
+            
+            .testimonial {
+                padding: 2rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="container">
+            <nav class="main-nav">
+                <div class="nav-logo">
+                    <a href="#hero">Inga Birna</a>
+                </div>
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="#um-mig">Um mig</a></li>
+                    <li><a href="#thjonusta">Þjónusta</a></li>
+                    <li><a href="#umsagnir">Umsagnir</a></li>
+                    <li><a href="#ferlid">Ferlið</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#samband">Hafðu samband</a></li>
+                    <li><a href="#samband" class="btn btn-primary">Bóka fund</a></li>
+                </ul>
+                <div class="hamburger" id="hamburger">
+                    <div class="hamburger-line"></div>
+                    <div class="hamburger-line"></div>
+                    <div class="hamburger-line"></div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        <section id="hero" class="hero">
+            <canvas id="particle-canvas"></canvas>
+            <div class="hero-content">
+                <h1 id="hero-headline">Finndu jafnvægið aftur.</h1>
+                <p class="hero-subtext animate-on-scroll" style="transition-delay: 300ms;">
+                    Ég aðstoða þig við að öðlast <span id="typewriter" class="typewriter"></span> og byggja upp þá framtíð sem þig dreymir um.
+                </p>
+                <div class="hero-buttons animate-on-scroll" style="transition-delay: 400ms;">
+                    <a href="#samband" class="btn btn-primary">Bókaðu kynningartíma</a>
+                    <a href="mailto:andlegeinkathjalfun.inga@gmail.com" class="btn btn-secondary">Senda Póst</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="um-mig">
+            <div class="container">
+                <div class="about-card animate-on-scroll">
+                    <div class="about-image-placeholder" aria-hidden="true"></div>
+                    <div class="about-text">
+                        <h3>Inga Birna Jónsdóttir</h3>
+                        <p>Með margra ára reynslu í markþjálfun hef ég brennandi áhuga á að hjálpa fólki að uppgötva sína innri styrkleika. Ég trúi því að allir búi yfir þeim hæfileikum sem þarf til að lifa innihaldsríku og gefandi lífi.</p>
+                        <p>Mín nálgun byggir á trausti, virðingu og persónulegri tengingu. Saman munum við kortleggja þín markmið og skapa raunhæfa áætlun til að ná þeim.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="thjonusta">
+            <div class="container">
+                <h2 class="animate-on-scroll">Þjónusta</h2>
+                <div class="services-grid">
+                    <article class="service-card animate-on-scroll">
+                        <h3>Einkaþjálfun</h3>
+                        <p>Sérsniðin 1-á-1 markþjálfun þar sem við vinnum markvisst að þínum persónulegu eða faglegu markmiðum. Við hittumst reglulega og fylgjum eftir þinni vegferð.</p>
+                    </article>
+                    <article class="service-card animate-on-scroll">
+                        <h3>Fjarleiðsögn</h3>
+                        <p>Sveigjanleg markþjálfun í gegnum fjarfundabúnað. Fáðu sömu gæði og persónulega nálgun, hvar sem þú ert stödd/staddur á landinu eða í heiminum.</p>
+                    </article>
+                    <article class="service-card animate-on-scroll">
+                        <h3>Vinnustofur</h3>
+                        <p>Hagnýtar og hvetjandi vinnustofur fyrir hópa eða fyrirtæki. Efnið getur snúið að streitustjórnun, markmiðasetningu, bættum samskiptum og fleiru.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="umsagnir">
+            <div class="container">
+                <h2 class="animate-on-scroll">Hvað segja viðskiptavinir?</h2>
+                <div class="testimonial-slider animate-on-scroll">
+                    <div class="testimonial-track">
+                        <div class="testimonial">
+                            <blockquote>„Samstarfið við Ingu breytti öllu fyrir mig. Ég fann aftur neistann og sjálfstraustið sem mig hafði vantað. Mæli 100% með henni.“</blockquote>
+                            <cite class="testimonial-author">- Anna Gunnarsdóttir</cite>
+                        </div>
+                        <div class="testimonial">
+                            <blockquote>„Ég lærði svo mikið um sjálfa mig og fékk hagnýt verkfæri til að takast á við áskoranir í vinnu og einkalífi. Ómetanlegt ferli.“</blockquote>
+                            <cite class="testimonial-author">- Björn Karlsson</cite>
+                        </div>
+                        <div class="testimonial">
+                            <blockquote>„Fagleg og hlý nálgun. Inga er frábær í að hlusta og spyrja réttu spurninganna sem koma manni áfram. Takk fyrir mig!“</blockquote>
+                            <cite class="testimonial-author">- Sigrún Pálsdóttir</cite>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-dots animate-on-scroll"></div>
+            </div>
+        </section>
+        
+        <section id="ferlid">
+            <div class="container">
+                <h2 class="animate-on-scroll">Ferlið okkar</h2>
+                <div class="process-steps">
+                    <div class="step animate-on-scroll">
+                        <div class="step-number" data-count="1">0</div>
+                        <h3>Kynningarfundur</h3>
+                        <p>Við byrjum á ókeypis 30 mínútna kynningarfundi þar sem við förum yfir þínar þarfir og hvort við séum rétta teymið fyrir þig.</p>
+                    </div>
+                    <div class="step animate-on-scroll">
+                        <div class="step-number" data-count="2">0</div>
+                        <h3>Markmið & Áætlun</h3>
+                        <p>Ef við ákveðum að halda áfram setjum við okkur skýr markmið og búum til persónusniðna áætlun sem hentar þér og þínum aðstæðum.</p>
+                    </div>
+                    <div class="step animate-on-scroll">
+                        <div class="step-number" data-count="3">0</div>
+                        <h3>Eftirfylgni & Stuðningur</h3>
+                        <p>Í gegnum allt ferlið fylgi ég þér eftir, veiti stuðning og við aðlögum áætlunina eftir þörfum til að tryggja hámarksárangur.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq">
+            <div class="container">
+                <h2 class="animate-on-scroll">Algengar spurningar</h2>
+                <div class="faq-accordion animate-on-scroll">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Hvað er andleg einkaþjálfun (markþjálfun)?
+                            <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </div>
+                        <div class="faq-answer-wrapper">
+                            <div class="faq-answer"><p>Markþjálfun er samstarfsferli þar sem markþjálfi hjálpar þér að hámarka persónulega og faglega möguleika þína. Þetta er ekki ráðgjöf, heldur aðstoð við að finna svörin innra með þér.</p></div>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Fyrir hverja er þetta?
+                            <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </div>
+                        <div class="faq-answer-wrapper">
+                            <div class="faq-answer"><p>Fyrir alla sem vilja gera jákvæðar breytingar á lífi sínu. Hvort sem þú ert að takast á við streitu, vilt auka sjálfstraust, setja þér ný markmið eða finna meiri tilgang, þá getur markþjálfun hjálpað.</p></div>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Hvað tekur ferlið langan tíma?
+                            <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </div>
+                        <div class="faq-answer-wrapper">
+                            <div class="faq-answer"><p>Lengd ferlisins er einstaklingsbundin. Sumir ná markmiðum sínum á nokkrum tímum á meðan aðrir kjósa lengra samstarf. Við metum þetta saman á kynningarfundinum.</p></div>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Er farið með allar upplýsingar sem trúnaðarmál?
+                            <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </div>
+                        <div class="faq-answer-wrapper">
+                            <div class="faq-answer"><p>Já, algjör trúnaður er lykilatriði í okkar samstarfi. Allt sem fram fer í okkar samtölum er bundið fullum trúnaði.</p></div>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Hvernig bóka ég tíma?
+                            <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </div>
+                        <div class="faq-answer-wrapper">
+                            <div class="faq-answer"><p>Þú getur byrjað á því að senda mér póst á <a href="mailto:andlegeinkathjalfun.inga@gmail.com">andlegeinkathjalfun.inga@gmail.com</a> eða haft samband í gegnum samfélagsmiðla til að bóka ókeypis kynningarfund.</p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="samband">
+            <div class="container">
+                <h2 class="animate-on-scroll">Hafðu samband</h2>
+                <p class="animate-on-scroll" style="text-align: center; max-width: 800px; margin: 0 auto 3rem auto;">
+                    Fylltu út formið til að bóka ókeypis kynningarfund, eða notaðu upplýsingarnar hér til hliðar til að hafa samband beint.
+                </p>
+                <div class="contact-grid animate-on-scroll">
+                    <div class="contact-form-wrapper">
+                        <form id="contact-form" class="contact-form">
+                            <div class="form-group">
+                                <label for="name">Nafn</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Netfang</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Skilaboð</label>
+                                <textarea id="message" name="message" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Senda skilaboð</button>
+                        </form>
+                        <div id="success-message">
+                            <h3>Takk fyrir!</h3>
+                            <p>Skilaboðin þín hafa verið send. Ég hef samband við þig eins fljótt og auðið er.</p>
+                        </div>
+                    </div>
+                    <div class="contact-info-wrapper">
+                        <h3>Bein skilaboð</h3>
+                        <div class="contact-methods">
+                            <div class="contact-method">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                                <a href="mailto:andlegeinkathjalfun.inga@gmail.com">andlegeinkathjalfun.inga@gmail.com</a>
+                            </div>
+                            <div class="contact-method">
+                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                                <a href="tel:+3545551234">Sími: 555-1234</a>
+                            </div>
+                        </div>
+                        <h3>Fylgdu mér</h3>
+                        <div class="social-links">
+                            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                            </a>
+                            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Facebook">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p>Inga Birna Jónsdóttir</p>
+            <p><a href="mailto:andlegeinkathjalfun.inga@gmail.com">andlegeinkathjalfun.inga@gmail.com</a> | Sími: 555-1234</p>
+            <p>&copy; <span id="current-year"></span> Inga Birna – Öll réttindi áskilin.</p>
+        </div>
+    </footer>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+        // --- Particle BG ---
+        const canvas = document.getElementById('particle-canvas');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        let particlesArray;
+
+        const mouse = {
+            x: null,
+            y: null,
+            radius: (canvas.height / 120) * (canvas.width / 120)
+        }
+
+        window.addEventListener('mousemove', (event) => {
+            mouse.x = event.x;
+            mouse.y = event.y;
+        });
+
+        class Particle {
+            constructor(x, y, directionX, directionY, size, color) {
+                this.x = x;
+                this.y = y;
+                this.directionX = directionX;
+                this.directionY = directionY;
+                this.size = size;
+                this.color = color;
+            }
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
+                ctx.fillStyle = 'rgba(143, 166, 161, 0.5)';
+                ctx.fill();
+            }
+            update() {
+                if (this.x > canvas.width || this.x < 0) {
+                    this.directionX = -this.directionX;
+                }
+                if (this.y > canvas.height || this.y < 0) {
+                    this.directionY = -this.directionY;
+                }
+
+                let dx = mouse.x - this.x;
+                let dy = mouse.y - this.y;
+                let distance = Math.sqrt(dx * dx + dy * dy);
+                if (distance < mouse.radius + this.size) {
+                    if (mouse.x < this.x && this.x < canvas.width - this.size * 10) {
+                        this.x += 5;
+                    }
+                    if (mouse.x > this.x && this.x > this.size * 10) {
+                        this.x -= 5;
+                    }
+                    if (mouse.y < this.y && this.y < canvas.height - this.size * 10) {
+                        this.y += 5;
+                    }
+                    if (mouse.y > this.y && this.y > this.size * 10) {
+                        this.y -= 5;
+                    }
+                }
+                this.x += this.directionX;
+                this.y += this.directionY;
+                this.draw();
+            }
+        }
+
+        function initParticles() {
+            particlesArray = [];
+            let numberOfParticles = (canvas.height * canvas.width) / 9000;
+            for (let i = 0; i < numberOfParticles; i++) {
+                let size = (Math.random() * 2) + 1;
+                let x = (Math.random() * ((innerWidth - size * 2) - (size * 2)) + size * 2);
+                let y = (Math.random() * ((innerHeight - size * 2) - (size * 2)) + size * 2);
+                let directionX = (Math.random() * 0.4) - 0.2;
+                let directionY = (Math.random() * 0.4) - 0.2;
+                let color = 'rgba(143, 166, 161, 0.5)';
+                particlesArray.push(new Particle(x, y, directionX, directionY, size, color));
+            }
+        }
+
+        function animateParticles() {
+            requestAnimationFrame(animateParticles);
+            ctx.clearRect(0, 0, innerWidth, innerHeight);
+            for (let i = 0; i < particlesArray.length; i++) {
+                particlesArray[i].update();
+            }
+        }
+
+        window.addEventListener('resize', () => {
+            canvas.width = innerWidth;
+            canvas.height = innerHeight;
+            mouse.radius = (canvas.height / 120) * (canvas.width / 120);
+            initParticles();
+        });
+
+        window.addEventListener('mouseout', () => {
+            mouse.x = undefined;
+            mouse.y = undefined;
+        });
+
+        initParticles();
+        animateParticles();
+
+
+        // --- Sticky Nav Shadow on Scroll ---
+        const header = document.querySelector('.main-header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // --- Mobile Navigation ---
+        const hamburger = document.getElementById('hamburger');
+        const navLinksContainer = document.getElementById('nav-links');
+        const navLinks = navLinksContainer.querySelectorAll('a');
+
+        hamburger.addEventListener('click', () => {
+            navLinksContainer.classList.toggle('nav-open');
+            hamburger.classList.toggle('toggled');
+            document.body.classList.toggle('nav-open');
+        });
+        
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (navLinksContainer.classList.contains('nav-open')) {
+                    navLinksContainer.classList.remove('nav-open');
+                    hamburger.classList.remove('toggled');
+                    document.body.classList.remove('nav-open');
+                }
+            });
+        });
+
+        // --- Hero Headline Animation ---
+        const headline = document.getElementById('hero-headline');
+        const words = headline.innerText.split(' ');
+        headline.innerHTML = words.map((word, index) => `<span class="word" style="animation-delay: ${index * 150}ms">${word}</span>`).join(' ');
+
+        // --- Hero Typewriter Effect ---
+        const typewriterElement = document.getElementById('typewriter');
+        const typewriterWords = ['meiri ró', 'sjálfstraust', 'skýr markmið'];
+        let typeWordIndex = 0;
+        let typeCharIndex = 0;
+        let isDeleting = false;
+
+        function type() {
+            const currentWord = typewriterWords[typeWordIndex];
+            const currentChars = isDeleting 
+                ? currentWord.substring(0, typeCharIndex - 1)
+                : currentWord.substring(0, typeCharIndex + 1);
+            
+            typewriterElement.textContent = currentChars;
+            
+            if (!isDeleting && typeCharIndex < currentWord.length) {
+                typeCharIndex++;
+                setTimeout(type, 150);
+            } else if (isDeleting && typeCharIndex > 0) {
+                typeCharIndex--;
+                setTimeout(type, 100);
+            } else {
+                isDeleting = !isDeleting;
+                if (!isDeleting) {
+                    typeWordIndex = (typeWordIndex + 1) % typewriterWords.length;
+                }
+                setTimeout(type, isDeleting ? 1500 : 500);
+            }
+        }
+        setTimeout(type, 1000); // Start after headline animates
+
+        // --- Scroll-reveal Animations for Sections ---
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const elementsToAnimate = Array.from(entry.target.querySelectorAll('.animate-on-scroll'));
+                    if (elementsToAnimate.length === 0 && entry.target.classList.contains('animate-on-scroll')) {
+                        elementsToAnimate.push(entry.target);
+                    }
+                    
+                    elementsToAnimate.forEach((el, index) => {
+                        if (!el.style.transitionDelay) {
+                           el.style.transitionDelay = `${index * 150}ms`;
+                        }
+                        el.classList.add('is-visible');
+                    });
+
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
+
+        document.querySelectorAll('.animate-on-scroll, section').forEach(el => {
+            revealObserver.observe(el);
+        });
+        
+        // --- Service Card 3D Tilt Effect ---
+        const serviceCards = document.querySelectorAll('.service-card');
+        serviceCards.forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                const { width, height } = rect;
+                const rotateX = (y / height - 0.5) * -15;
+                const rotateY = (x / width - 0.5) * 15;
+                
+                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0)';
+            });
+        });
+
+
+        // --- Active Nav Link on Scroll ---
+        const desktopNavLinks = document.querySelectorAll('.nav-links a:not(.btn)');
+        const sectionObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    desktopNavLinks.forEach(link => {
+                        link.classList.remove('active-link');
+                        if (link.getAttribute('href').substring(1) === entry.target.id) {
+                            link.classList.add('active-link');
+                        }
+                    });
+                }
+            });
+        }, { rootMargin: '-40% 0px -60% 0px' });
+        
+        document.querySelectorAll('main section').forEach(section => {
+            sectionObserver.observe(section);
+        });
+        
+        // --- Testimonial Slider ---
+        const slider = document.querySelector('.testimonial-slider');
+        const track = document.querySelector('.testimonial-track');
+        if (slider && track) {
+            const slides = Array.from(track.children);
+            const dotsNav = document.querySelector('.slider-dots');
+            let slideWidth = 0;
+            let currentSlide = 0;
+            
+            function updateSliderDimensions() {
+                if (!slider) return;
+                slideWidth = slider.getBoundingClientRect().width;
+                slides.forEach(slide => {
+                    slide.style.width = `${slideWidth}px`;
+                });
+                track.style.transform = `translateX(-${slideWidth * currentSlide}px)`;
+            }
+            
+            if (dotsNav && dotsNav.children.length === 0) {
+                slides.forEach((slide, index) => {
+                    const dot = document.createElement('button');
+                    dot.classList.add('dot');
+                    if (index === 0) dot.classList.add('active');
+                    dot.addEventListener('click', () => {
+                        moveToSlide(index);
+                        resetInterval();
+                    });
+                    dotsNav.appendChild(dot);
+                });
+            }
+            
+            const dots = dotsNav ? Array.from(dotsNav.children) : [];
+
+            const moveToSlide = (targetIndex) => {
+                track.style.transform = `translateX(-${slideWidth * targetIndex}px)`;
+                if(dots[currentSlide]) dots[currentSlide].classList.remove('active');
+                if(dots[targetIndex]) dots[targetIndex].classList.add('active');
+                currentSlide = targetIndex;
+            };
+            
+            let slideInterval = setInterval(() => {
+                const nextSlide = (currentSlide + 1) % slides.length;
+                moveToSlide(nextSlide);
+            }, 5000);
+            
+            const resetInterval = () => {
+                clearInterval(slideInterval);
+                slideInterval = setInterval(() => {
+                    const nextSlide = (currentSlide + 1) % slides.length;
+                    moveToSlide(nextSlide);
+                }, 5000);
+            };
+            
+            updateSliderDimensions();
+            
+            let resizeTimer;
+            window.addEventListener('resize', () => {
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(updateSliderDimensions, 250);
+            });
+        }
+
+        // --- Animated Counters ---
+        function animateCountUp(el) {
+            const target = +el.getAttribute('data-count');
+            el.innerText = '0';
+            let count = 0;
+            const duration = 1300; 
+            const frameRate = 1000 / 60;
+            const totalFrames = Math.round(duration / frameRate);
+            const increment = target / totalFrames;
+
+            const counter = () => {
+                count += increment;
+                if (count < target) {
+                    el.innerText = Math.ceil(count);
+                    setTimeout(counter, frameRate);
+                } else {
+                    el.innerText = target;
+                }
+            };
+            counter();
+        }
+
+        const countObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCountUp(entry.target);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.8 });
+
+        document.querySelectorAll('.step-number[data-count]').forEach(num => {
+            countObserver.observe(num);
+        });
+
+
+        // --- JS-Powered Smooth FAQ Accordion ---
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            const answerWrapper = item.querySelector('.faq-answer-wrapper');
+            const answer = item.querySelector('.faq-answer');
+            
+            answerWrapper.style.maxHeight = '0px';
+
+            question.addEventListener('click', () => {
+                const isOpen = item.classList.contains('is-open');
+
+                faqItems.forEach(otherItem => {
+                    otherItem.classList.remove('is-open');
+                    otherItem.querySelector('.faq-answer-wrapper').style.maxHeight = '0px';
+                });
+
+                if (!isOpen) {
+                    item.classList.add('is-open');
+                    answerWrapper.style.maxHeight = `${answer.scrollHeight}px`;
+                }
+            });
+        });
+        
+        // --- Contact Form Submission & Confetti ---
+        const form = document.getElementById('contact-form');
+        const successMessage = document.getElementById('success-message');
+
+        if (form) {
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                form.style.display = 'none';
+                successMessage.style.display = 'block';
+            });
+        }
+
+        // --- Footer Current Year ---
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+    });
+    </script>
+
+</body>
+</html>

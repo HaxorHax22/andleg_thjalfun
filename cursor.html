@@ -1,0 +1,1097 @@
+<!DOCTYPE html>
+<html lang="is">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inga Birna – Andleg einkaþjálfun | Finndu jafnvægið aftur</title>
+    <meta name="description" content="Andleg einkaþjálfun með Inga Birnu. Fáðu meiri ró, sjálfstraust og skýr markmið í lífinu þínu.">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Inga Birna – Andleg einkaþjálfun">
+    <meta property="og:description" content="Finndu jafnvægið aftur með andlegri einkaþjálfun">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="is_IS">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
+    
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Inga Birna – Andleg einkaþjálfun",
+        "description": "Andleg einkaþjálfun og fjarleiðsögn",
+        "areaServed": "Iceland",
+        "url": "https://ingabirna.is"
+    }
+    </script>
+    
+    <style>
+        :root {
+            --sand: #F5F1EA;
+            --deep-teal: #0E3B43;
+            --sage: #8FA6A1;
+            --gold: #C7A23A;
+            --white: #ffffff;
+            --shadow: 0 4px 20px rgba(14, 59, 67, 0.1);
+            --shadow-hover: 0 8px 30px rgba(14, 59, 67, 0.15);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--deep-teal);
+            background-color: var(--sand);
+        }
+        
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(245, 241, 234, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--deep-teal);
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--deep-teal);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+        
+        .nav-links a.active {
+            color: var(--gold);
+        }
+        
+        .cta-button {
+            background: var(--gold);
+            color: var(--white);
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .cta-button:hover {
+            background: #b08f2e;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--deep-teal);
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(135deg, var(--sand) 0%, #e8e0d5 100%);
+            position: relative;
+            overflow: hidden;
+            padding: 8rem 2rem 4rem;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c7a23a' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.6;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            z-index: 1;
+            position: relative;
+        }
+        
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--deep-teal);
+        }
+        
+        .typewriter {
+            color: var(--gold);
+            border-right: 3px solid var(--gold);
+            animation: blink 1s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 50% { border-color: transparent; }
+            51%, 100% { border-color: var(--gold); }
+        }
+        
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            color: var(--sage);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn-primary {
+            background: var(--gold);
+            color: var(--white);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+        }
+        
+        .btn-primary:hover {
+            background: #b08f2e;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--deep-teal);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid var(--deep-teal);
+            cursor: pointer;
+            font-size: 1.1rem;
+        }
+        
+        .btn-secondary:hover {
+            background: var(--deep-teal);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+        
+        /* Sections */
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 3rem;
+            color: var(--deep-teal);
+        }
+        
+        /* About Section */
+        .about-card {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .about-points {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .about-point {
+            text-align: center;
+            padding: 1.5rem;
+        }
+        
+        .about-point h3 {
+            color: var(--gold);
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+        }
+        
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .service-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 1.5rem;
+            background: var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.5rem;
+        }
+        
+        .service-card h3 {
+            color: var(--deep-teal);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .service-card p {
+            color: var(--sage);
+            margin-bottom: 1.5rem;
+        }
+        
+        .service-cta {
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        
+        .service-cta:hover {
+            color: var(--deep-teal);
+        }
+        
+        /* Testimonials */
+        .testimonials-container {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        
+        .testimonials-track {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        
+        .testimonial {
+            min-width: 100%;
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+        
+        .testimonial blockquote {
+            font-size: 1.25rem;
+            font-style: italic;
+            color: var(--deep-teal);
+            margin-bottom: 1.5rem;
+        }
+        
+        .testimonial cite {
+            color: var(--gold);
+            font-weight: 600;
+        }
+        
+        .testimonial-nav {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .testimonial-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--sage);
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        
+        .testimonial-dot.active {
+            background: var(--gold);
+        }
+        
+        /* Timeline */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--gold);
+            transform: translateX(-50%);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+            width: 45%;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            left: 0;
+            text-align: right;
+        }
+        
+        .timeline-item:nth-child(even) {
+            left: 55%;
+            text-align: left;
+        }
+        
+        .timeline-content {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 20px;
+            height: 20px;
+            background: var(--gold);
+            border-radius: 50%;
+            transform: translateY(-50%);
+        }
+        
+        .timeline-item:nth-child(odd)::before {
+            right: -10px;
+        }
+        
+        .timeline-item:nth-child(even)::before {
+            left: -10px;
+        }
+        
+        .timeline-number {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--gold);
+            color: var(--white);
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+        
+        /* FAQ */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            background: var(--white);
+            border-radius: 15px;
+            margin-bottom: 1rem;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            background: var(--deep-teal);
+            color: var(--white);
+            padding: 1.5rem;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.3s ease;
+            border: none;
+            width: 100%;
+            text-align: left;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .faq-question:hover {
+            background: var(--sage);
+        }
+        
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-item[open] .faq-question::after {
+            transform: rotate(45deg);
+        }
+        
+        .faq-answer {
+            padding: 1.5rem;
+            color: var(--deep-teal);
+            line-height: 1.7;
+        }
+        
+        /* Contact Form */
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--deep-teal);
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid var(--sage);
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+            background: var(--sand);
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--gold);
+            background: var(--white);
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        .checkbox-group {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+        }
+        
+        .checkbox-group input[type="checkbox"] {
+            width: auto;
+            margin-top: 0.25rem;
+        }
+        
+        .submit-btn {
+            background: var(--gold);
+            color: var(--white);
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+        
+        .submit-btn:hover {
+            background: #b08f2e;
+            transform: translateY(-2px);
+        }
+        
+        /* Toast */
+        .toast {
+            position: fixed;
+            top: 100px;
+            right: 2rem;
+            background: var(--gold);
+            color: var(--white);
+            padding: 1rem 2rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            transform: translateX(400px);
+            transition: transform 0.3s ease;
+            z-index: 1001;
+        }
+        
+        .toast.show {
+            transform: translateX(0);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--deep-teal);
+            color: var(--white);
+            text-align: center;
+            padding: 3rem 2rem;
+            margin-top: 5rem;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .footer-contact {
+            margin-bottom: 2rem;
+        }
+        
+        .footer-contact p {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-copyright {
+            border-top: 1px solid var(--sage);
+            padding-top: 2rem;
+            color: var(--sage);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu-toggle {
+                display: block;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .timeline::before {
+                left: 2rem;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                left: 0 !important;
+                text-align: left !important;
+                padding-left: 4rem;
+            }
+            
+            .timeline-item::before {
+                left: 1rem !important;
+            }
+            
+            .timeline-number {
+                left: 1rem;
+                transform: none;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-points {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Animation classes */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .slide-in-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 0.6s ease;
+        }
+        
+        .slide-in-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .slide-in-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 0.6s ease;
+        }
+        
+        .slide-in-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        /* Confetti */
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background: var(--gold);
+            pointer-events: none;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">Inga Birna</a>
+            <div class="nav-links">
+                <a href="#um-mig">Um mig</a>
+                <a href="#thjonusta">Þjónusta</a>
+                <a href="#umsagnir">Umsagnir</a>
+                <a href="#ferlid">Ferlið</a>
+                <a href="#spurningar">Spurningar</a>
+                <a href="#samband">Hafðu samband</a>
+                <a href="#samband" class="cta-button">Bóka fund</a>
+            </div>
+            <button class="mobile-menu-toggle">☰</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <h1>Finndu jafnvægið aftur.</h1>
+            <p>Með andlegri einkaþjálfun færðu <span class="typewriter" id="typewriter"></span></p>
+            <div class="hero-buttons">
+                <a href="#samband" class="btn-primary">Bókaðu kynningartíma</a>
+                <a href="#samband" class="btn-secondary">Senda skilaboð</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="um-mig" class="fade-in">
+        <h2 class="section-title">Um mig</h2>
+        <div class="about-card">
+            <p>Ég er Inga Birna, andleg einkaþjálfari með áhuga á að hjálpa fólki að finna jafnvægi og meiningu í lífinu. Með nálgun sem byggir á trausti og skilningi, hjálpa ég þér að ná markmiðum þínum.</p>
+            <div class="about-points">
+                <div class="about-point">
+                    <h3>Reynsla</h3>
+                    <p>Meira en 10 ára reynsla í andlegri þjálfun og fjarleiðsögn</p>
+                </div>
+                <div class="about-point">
+                    <h3>Nálgun</h3>
+                    <p>Persónuleg og samhæfð nálgun sem hentar þínum einstaka þörfum</p>
+                </div>
+                <div class="about-point">
+                    <h3>Gildi</h3>
+                    <p>Byggir á trausti, heiðarleika og að hjálpa þér að ná fullri möguleikum</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="thjonusta" class="fade-in">
+        <h2 class="section-title">Þjónusta</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">👥</div>
+                <h3>Einkaþjálfun 60 mín</h3>
+                <p>Persónuleg þjálfun annaðhvort á staðnum eða á netinu. Einstök nálgun sem hentar þínum markmiðum.</p>
+                <a href="#samband" class="service-cta">Fá nánar</a>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">📱</div>
+                <h3>Fjarleiðsögn</h3>
+                <p>Vikuleg eftirfylgni og stuðningur með reglulegum fundum og skilaboðum á milli.</p>
+                <a href="#samband" class="service-cta">Fá nánar</a>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">👥</div>
+                <h3>Vinnustofur</h3>
+                <p>Litlir hópar sem deila svipuðum áskorunum. Lærðu af öðrum og fáðu stuðning í hópnum.</p>
+                <a href="#samband" class="service-cta">Fá nánar</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="umsagnir" class="fade-in">
+        <h2 class="section-title">Umsagnir</h2>
+        <div class="testimonials-container">
+            <div class="testimonials-track" id="testimonials-track">
+                <div class="testimonial">
+                    <blockquote>"Inga Birna hjálpaði mér að finna jafnvægið í lífinu og að setja skýr markmið. Ég mæli eindregið með henni."</blockquote>
+                    <cite>- Anna Jónsdóttir</cite>
+                </div>
+                <div class="testimonial">
+                    <blockquote>"Með henni fann ég meiri ró og sjálfstraust. Þjálfunin hefur breytt lífinu mínu til hins betra."</blockquote>
+                    <cite>- Pétur Sigurðsson</cite>
+                </div>
+                <div class="testimonial">
+                    <blockquote>"Profesional og áreiðanleg þjálfari sem skilur þarfir mínar. Mjög ánægð með niðurstöðurnar."</blockquote>
+                    <cite>- María Einarsdóttir</cite>
+                </div>
+            </div>
+            <div class="testimonial-nav" id="testimonial-nav"></div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="ferlid" class="fade-in">
+        <h2 class="section-title">Ferlið</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-number">1</div>
+                <div class="timeline-content">
+                    <h3>Kynningarfundur</h3>
+                    <p>Við hittumst og ræðum þarfir þínar og markmið. Þetta er tími til að kynnast og ákveða hvort við hentum saman.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-number">2</div>
+                <div class="timeline-content">
+                    <h3>Áætlun</h3>
+                    <p>Við búum til sérsniðna áætlun sem hentar þínum einstaka aðstæðum og markmiðum.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-number">3</div>
+                <div class="timeline-content">
+                    <h3>Eftirfylgni</h3>
+                    <p>Við fylgjumst með framvindu og gerum stillingar eftir þörfum. Stuðningurinn heldur áfram.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="spurningar" class="fade-in">
+        <h2 class="section-title">Algengar spurningar</h2>
+        <div class="faq-container">
+            <details class="faq-item">
+                <summary class="faq-question">Hversu lengi tekur þjálfunin?</summary>
+                <div class="faq-answer">Þjálfunin er venjulega 60 mínútur og við mælum með að þú komir í að minnsta kosti 4-6 fundi til að sjá áhrif.</div>
+            </details>
+            <details class="faq-item">
+                <summary class="faq-question">Get ég bókað fund á netinu?</summary>
+                <div class="faq-answer">Já, ég býð upp á bæði fundi á staðnum og á netinu. Netfundir eru eins áhrifamiklir og fundir á staðnum.</div>
+            </details>
+            <details class="faq-item">
+                <summary class="faq-question">Hvað kostar þjálfunin?</summary>
+                <div class="faq-answer">Verð eru mismunandi eftir þjónustu. Hafðu samband fyrir nákvæmar upplýsingar um verð.</div>
+            </details>
+            <details class="faq-item">
+                <summary class="faq-question">Hvað ef ég get ekki komið á fund?</summary>
+                <div class="faq-answer">Ef þú þarft að fresta fundi, vinsamlegast láttu mig vita að minnsta kosti 24 klukkustundum fyrirfram.</div>
+            </details>
+            <details class="faq-item">
+                <summary class="faq-question">Er þjálfunin trúarleg?</summary>
+                <div class="faq-answer">Nei, þjálfunin er ekki trúarleg. Hún byggir á vísindalegum aðferðum og reynslu.</div>
+            </details>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="samband" class="fade-in">
+        <h2 class="section-title">Hafðu samband</h2>
+        <form class="contact-form" data-netlify="true">
+            <div class="form-group">
+                <label for="name">Nafn *</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Netfang *</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Sími</label>
+                <input type="tel" id="phone" name="phone">
+            </div>
+            <div class="form-group">
+                <label for="message">Skilaboð *</label>
+                <textarea id="message" name="message" required></textarea>
+            </div>
+            <div class="form-group">
+                <div class="checkbox-group">
+                    <input type="checkbox" id="consent" name="consent" required>
+                    <label for="consent">Ég samþykki að Inga Birna hafi samband við mig *</label>
+                </div>
+            </div>
+            <button type="submit" class="submit-btn">Senda skilaboð</button>
+        </form>
+    </section>
+
+    <!-- Toast -->
+    <div class="toast" id="toast">Takk fyrir skilaboðin! Við höfum samband fljótlega.</div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-contact">
+                <p>Inga Birna – Andleg einkaþjálfun</p>
+                <p>Netfang: inga@ingabirna.is</p>
+                <p>Sími: +354 123 4567</p>
+            </div>
+            <div class="footer-copyright">
+                <p>&copy; <span id="current-year"></span> Inga Birna. Öll réttindi áskilin.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Typewriter effect
+        const typewriterElement = document.getElementById('typewriter');
+        const words = ['meiri ró', 'sjálfstraust', 'skýr markmið'];
+        let wordIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+
+        function typeWriter() {
+            const currentWord = words[wordIndex];
+            
+            if (isDeleting) {
+                typewriterElement.textContent = currentWord.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typewriterElement.textContent = currentWord.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            if (!isDeleting && charIndex === currentWord.length) {
+                setTimeout(() => isDeleting = true, 2000);
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                wordIndex = (wordIndex + 1) % words.length;
+            }
+
+            const speed = isDeleting ? 100 : 200;
+            setTimeout(typeWriter, speed);
+        }
+
+        // Start typewriter effect
+        setTimeout(typeWriter, 1000);
+
+        // Testimonials carousel
+        const testimonialsTrack = document.getElementById('testimonials-track');
+        const testimonialNav = document.getElementById('testimonial-nav');
+        let currentTestimonial = 0;
+        const totalTestimonials = 3;
+
+        // Create navigation dots
+        for (let i = 0; i < totalTestimonials; i++) {
+            const dot = document.createElement('div');
+            dot.className = 'testimonial-dot';
+            if (i === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => goToTestimonial(i));
+            testimonialNav.appendChild(dot);
+        }
+
+        function goToTestimonial(index) {
+            currentTestimonial = index;
+            testimonialsTrack.style.transform = `translateX(-${index * 100}%)`;
+            
+            // Update active dot
+            document.querySelectorAll('.testimonial-dot').forEach((dot, i) => {
+                dot.classList.toggle('active', i === index);
+            });
+        }
+
+        // Auto-rotate testimonials
+        setInterval(() => {
+            currentTestimonial = (currentTestimonial + 1) % totalTestimonials;
+            goToTestimonial(currentTestimonial);
+        }, 5000);
+
+        // Scroll reveal
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all animated elements
+        document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Active navigation highlighting
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-links a');
+
+        function highlightNavLink() {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.pageYOffset >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', highlightNavLink);
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Form submission
+        const contactForm = document.querySelector('.contact-form');
+        const toast = document.getElementById('toast');
+
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Show success toast
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 5000);
+
+            // Create confetti effect
+            createConfetti();
+
+            // Reset form
+            contactForm.reset();
+        });
+
+        // Confetti effect
+        function createConfetti() {
+            for (let i = 0; i < 50; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.left = Math.random() * 100 + 'vw';
+                confetti.style.animationDelay = Math.random() * 3 + 's';
+                confetti.style.animationDuration = Math.random() * 3 + 2 + 's';
+                
+                document.body.appendChild(confetti);
+                
+                // Animate confetti
+                confetti.animate([
+                    { transform: 'translateY(-10px)', opacity: 1 },
+                    { transform: `translateY(${window.innerHeight}px)`, opacity: 0 }
+                ], {
+                    duration: 3000,
+                    easing: 'ease-out'
+                }).onfinish = () => confetti.remove();
+            }
+        }
+
+        // Set current year in footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Respect reduced motion preference
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            document.documentElement.style.setProperty('--animation-duration', '0.01ms');
+        }
+    </script>
+</body>
+</html>
