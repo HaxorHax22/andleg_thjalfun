@@ -238,10 +238,7 @@
             z-index: 1;
         }
         
-        /* Spiritual pattern background - removed */
-        .spiritual-pattern {
-            /* Background pattern removed for cleaner look */
-        }
+        /* Spiritual pattern background - removed for cleaner look */
 
         /* --- UPDATED: More Dramatic Hover Effects --- */
         .service-card, .testimonial-card {
@@ -365,28 +362,28 @@
 <body class="bg-custom-spiritual text-deep-charcoal">
 
     <!-- Header -->
-    <header id="header" class="bg-transparent fixed w-full top-0 z-40 transition-all duration-300 px-6 md:px-8 py-4 overflow-hidden">
+    <header id="header" class="bg-transparent fixed w-full top-0 z-40 transition-all duration-300 px-4 sm:px-6 lg:px-8 py-3 sm:py-4 overflow-hidden">
         <div class="container mx-auto flex justify-between items-center">
-            <a href="#" class="flex items-center space-x-3">
-                <img src="img/logo.png" alt="Inga Birna Logo" class="h-20 w-20 rounded-lg hover:scale-105 transition-all duration-300 bg-white p-2">
-                <span class="text-xl font-bold text-custom-spiritual-dark hidden sm:block" style="text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4); filter: drop-shadow(0 1px 2px rgba(255, 255, 255, 0.8));">Inga Birna - Andleg Einkaþjálfun</span>
+            <a href="#" class="flex items-center space-x-2 sm:space-x-3">
+                <img src="img/logo.png" alt="Inga Birna Logo" class="h-16 w-16 sm:h-20 sm:w-20 rounded-lg hover:scale-105 transition-all duration-300 bg-white p-1 sm:p-2">
+                <span class="text-lg sm:text-xl font-bold text-custom-spiritual-dark hidden sm:block lg:block" style="text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4); filter: drop-shadow(0 1px 2px rgba(255, 255, 255, 0.8));">Inga Birna - Andleg Einkaþjálfun</span>
             </a>
-            <nav class="hidden md:flex space-x-10 items-center">
+            <nav class="hidden lg:flex space-x-6 xl:space-x-10 items-center">
                 <!-- UPDATED: Added nav-link class for new styling -->
-                <a href="#heim" class="nav-link text-gray-600 hover:text-custom-spiritual-dark transition duration-300">Heim</a>
-                <a href="#um-mig" class="nav-link text-gray-600 hover:text-custom-spiritual-dark transition duration-300">Um mig</a>
-                <a href="#namskeidid" class="nav-link text-gray-600 hover:text-custom-spiritual-dark transition duration-300">Námskeið</a>
-                <a href="#samband" class="nav-link text-gray-600 hover:text-custom-spiritual-dark transition duration-300">Hafa Samband</a>
+                <a href="#heim" class="nav-link text-gray-600 hover:text-custom-spiritual-dark transition duration-300 text-sm xl:text-base">Heim</a>
+                <a href="#um-mig" class="nav-link text-gray-600 hover:text-custom-spiritual-dark transition duration-300 text-sm xl:text-base">Um mig</a>
+                <a href="#namskeidid" class="nav-link text-gray-600 hover:text-custom-spiritual-dark transition duration-300 text-sm xl:text-base">Námskeið</a>
+                <a href="#samband" class="nav-link text-gray-600 hover:text-custom-spiritual-dark transition duration-300 text-sm xl:text-base">Hafa Samband</a>
             </nav>
-            <a href="#samband" class="hidden md:block bg-custom-spiritual-dark text-white px-5 py-2 rounded-full hover:bg-custom-spiritual-darker transition duration-300 shadow-lg cta-button">Bóka Tíma</a>
-            <button id="mobile-menu-button" class="md:hidden text-2xl text-custom-spiritual-dark z-50 relative">
+            <a href="#samband" class="hidden lg:block bg-custom-spiritual-dark text-white px-4 xl:px-5 py-2 rounded-full hover:bg-custom-spiritual-darker transition duration-300 shadow-lg cta-button text-sm xl:text-base">Bóka Tíma</a>
+            <button id="mobile-menu-button" class="lg:hidden text-2xl text-custom-spiritual-dark z-50 relative">
                 <i class="fas fa-bars"></i>
             </button>
         </div>
     </header>
 
     <!-- Mobile Menu - Moved outside header for independence -->
-    <div id="mobile-menu" class="hidden md:hidden fixed inset-0 z-[9999] bg-black/60 backdrop-blur-lg" style="position: fixed !important; top: 0 !important; left: 0 !important; right: 0 !important; bottom: 0 !important;">
+    <div id="mobile-menu" class="hidden lg:hidden fixed inset-0 z-[9999] bg-black/60 backdrop-blur-lg" style="position: fixed !important; top: 0 !important; left: 0 !important; right: 0 !important; bottom: 0 !important;">
         <div class="flex flex-col items-center justify-center h-full w-full text-center">
             <!-- Close button -->
             <button id="mobile-menu-close" class="absolute top-6 right-6 text-white text-3xl hover:text-custom-spiritual transition-colors duration-300">
@@ -432,25 +429,25 @@
         <!-- Hero Section -->
         <section id="heim" class="h-screen flex items-center justify-center text-white text-center hero-bg overflow-hidden">
             <div class="hero-overlay"></div>
-            <div class="relative z-10 p-4 reveal">
-                <h1 id="hero-headline" class="text-4xl md:text-6xl font-bold mb-4 drop-shadow-lg">Láttu drauma þína leiða þig en ekki áhyggjurnar reka þig áfram</h1>
-                <p class="text-lg md:text-2xl mb-8 drop-shadow-md hero-subtext animate-on-scroll" style="transition-delay: 300ms;">
+            <div class="relative z-10 p-4 sm:p-6 lg:p-8 reveal">
+                <h1 id="hero-headline" class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 drop-shadow-lg">Láttu drauma þína leiða þig en ekki áhyggjurnar reka þig áfram</h1>
+                <p class="text-base sm:text-lg md:text-xl lg:text-2xl mb-6 sm:mb-8 drop-shadow-md hero-subtext animate-on-scroll" style="transition-delay: 300ms;">
                     
                 </p>
-                <a href="#namskeidid" class="bg-white text-custom-spiritual-dark px-8 py-3 rounded-full text-lg font-semibold hover:bg-gray-200 transition duration-300 shadow-xl cta-button">Byrjaðu þína ferð</a>
+                <a href="#namskeidid" class="bg-white text-custom-spiritual-dark px-6 sm:px-8 py-3 rounded-full text-base sm:text-lg font-semibold hover:bg-gray-200 transition duration-300 shadow-xl cta-button">Byrjaðu þína ferð</a>
             </div>
 
         </section>
         
         <!-- About Section -->
-        <section id="um-mig" class="py-20 bg-gray-50">
-            <div class="container mx-auto px-6">
+        <section id="um-mig" class="py-16 sm:py-20 bg-gray-50">
+            <div class="container mx-auto px-4 sm:px-6">
                 <div class="flex flex-wrap items-center -mx-4">
-                    <div class="w-full md:w-1/2 px-4 mb-8 md:mb-0 reveal-left">
+                    <div class="w-full md:w-1/2 px-4 mb-6 sm:mb-8 md:mb-0 reveal-left">
                         <img src="img/birna.jpg" alt="Inga Birna" class="rounded-2xl shadow-xl w-3/5 mx-auto" onerror="this.src='https://via.placeholder.com/400x500/F6F1E9/E96C3A?text=Inga+Birna'">
                     </div>
                     <div class="w-full md:w-1/2 px-4 reveal-right">
-                        <h2 class="text-3xl md:text-4xl font-bold text-custom-spiritual-dark mb-4">Um mig</h2>
+                        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-custom-spiritual-dark mb-4">Um mig</h2>
                         <p class="text-deep-charcoal mb-4">
                             Ég útskrifaðist sem andlegur einkaþjálfari 2024 og hlakka til að deila þessu magnaða efni til þín, efni sem breytt hefur svo mörgu í mínu lífi, mér sem leið svo vel og sá ekki þörf á að breyta neinu!
                         </p>
@@ -478,103 +475,103 @@
         </section>
 
         <!-- Challenges Section -->
-        <section id="aetlanir" class="py-20 bg-custom-spiritual">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-16 reveal-zoom">
-                    <h2 class="text-4xl md:text-5xl font-bold text-custom-spiritual-dark mb-6">Ef þú ert að upplifa</h2>
-                    <div class="w-24 h-1 bg-custom-spiritual-dark mx-auto mb-8"></div>
+        <section id="aetlanir" class="py-16 sm:py-20 bg-custom-spiritual">
+            <div class="container mx-auto px-4 sm:px-6">
+                <div class="text-center mb-12 sm:mb-16 reveal-zoom">
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-custom-spiritual-dark mb-4 sm:mb-6">Ef þú ert að upplifa</h2>
+                    <div class="w-24 h-1 bg-custom-spiritual-dark mx-auto mb-6 sm:mb-8"></div>
                 </div>
                 <div class="max-w-7xl mx-auto">
-                    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
+                    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 mb-12 sm:mb-16">
                         <div class="text-center reveal" style="transition-delay: 0ms;">
-                            <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                                <i class="fas fa-heart-broken text-3xl text-custom-spiritual-dark"></i>
+                            <div class="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-3 sm:mb-4 flex items-center justify-center">
+                                <i class="fas fa-heart-broken text-2xl sm:text-3xl text-custom-spiritual-dark"></i>
                             </div>
-                            <h3 class="text-base font-medium text-deep-charcoal">Kvíða</h3>
+                            <h3 class="text-sm sm:text-base font-medium text-deep-charcoal">Kvíða</h3>
                         </div>
                         
                         <div class="text-center reveal" style="transition-delay: 100ms;">
-                            <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                                <i class="fas fa-cloud text-3xl text-custom-spiritual-dark"></i>
+                            <div class="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-3 sm:mb-4 flex items-center justify-center">
+                                <i class="fas fa-cloud text-2xl sm:text-3xl text-custom-spiritual-dark"></i>
                             </div>
-                            <h3 class="text-base font-medium text-deep-charcoal">Þunglyndi</h3>
+                            <h3 class="text-sm sm:text-base font-medium text-deep-charcoal">Þunglyndi</h3>
                         </div>
                         
                         <div class="text-center reveal" style="transition-delay: 200ms;">
-                            <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                                <i class="fas fa-user-slash text-3xl text-custom-spiritual-dark"></i>
+                            <div class="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-3 sm:mb-4 flex items-center justify-center">
+                                <i class="fas fa-user-slash text-2xl sm:text-3xl text-custom-spiritual-dark"></i>
                             </div>
-                            <h3 class="text-base font-medium text-deep-charcoal">Depurð</h3>
+                            <h3 class="text-sm sm:text-base font-medium text-deep-charcoal">Depurð</h3>
                         </div>
                         
                         <div class="text-center reveal" style="transition-delay: 300ms;">
-                            <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                                <i class="fas fa-search text-3xl text-custom-spiritual-dark"></i>
+                            <div class="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-3 sm:mb-4 flex items-center justify-center">
+                                <i class="fas fa-search text-2xl sm:text-3xl text-custom-spiritual-dark"></i>
                             </div>
-                            <h3 class="text-base font-medium text-deep-charcoal">Að vera týnd/ur með sjálfa/n þig</h3>
+                            <h3 class="text-sm sm:text-base font-medium text-deep-charcoal">Að vera týnd/ur með sjálfa/n þig</h3>
                         </div>
                         
                         <div class="text-center reveal" style="transition-delay: 400ms;">
-                            <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                                <i class="fas fa-route text-3xl text-custom-spiritual-dark"></i>
+                            <div class="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-3 sm:mb-4 flex items-center justify-center">
+                                <i class="fas fa-route text-2xl sm:text-3xl text-custom-spiritual-dark"></i>
                             </div>
-                            <h3 class="text-base font-medium text-deep-charcoal">Að vera á krossgötum í lífinu</h3>
+                            <h3 class="text-sm sm:text-base font-medium text-deep-charcoal">Að vera á krossgötum í lífinu</h3>
                         </div>
                         
                         <div class="text-center reveal" style="transition-delay: 500ms;">
-                            <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                                <i class="fas fa-users text-3xl text-custom-spiritual-dark"></i>
+                            <div class="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-3 sm:mb-4 flex items-center justify-center">
+                                <i class="fas fa-users text-2xl sm:text-3xl text-custom-spiritual-dark"></i>
                             </div>
-                            <h3 class="text-base font-medium text-deep-charcoal">Erfið samskipti</h3>
+                            <h3 class="text-sm sm:text-base font-medium text-deep-charcoal">Erfið samskipti</h3>
                         </div>
                         
                         <div class="text-center reveal" style="transition-delay: 600ms;">
-                            <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                                <i class="fas fa-comment-slash text-3xl text-custom-spiritual-dark"></i>
+                            <div class="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-3 sm:mb-4 flex items-center justify-center">
+                                <i class="fas fa-comment-slash text-2xl sm:text-3xl text-custom-spiritual-dark"></i>
                             </div>
-                            <h3 class="text-base font-medium text-deep-charcoal">Sjálfsniðurrif</h3>
+                            <h3 class="text-sm sm:text-base font-medium text-deep-charcoal">Sjálfsniðurrif</h3>
                         </div>
                         
                         <div class="text-center reveal" style="transition-delay: 700ms;">
-                            <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                                <i class="fas fa-brain text-3xl text-custom-spiritual-dark"></i>
+                            <div class="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-3 sm:mb-4 flex items-center justify-center">
+                                <i class="fas fa-brain text-2xl sm:text-3xl text-custom-spiritual-dark"></i>
                             </div>
-                            <h3 class="text-base font-medium text-deep-charcoal">Ofhugsanir</h3>
+                            <h3 class="text-sm sm:text-base font-medium text-deep-charcoal">Ofhugsanir</h3>
                         </div>
                         
                         <div class="text-center reveal" style="transition-delay: 800ms;">
-                            <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                                <i class="fas fa-thumbs-down text-3xl text-custom-spiritual-dark"></i>
+                            <div class="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-3 sm:mb-4 flex items-center justify-center">
+                                <i class="fas fa-thumbs-down text-2xl sm:text-3xl text-custom-spiritual-dark"></i>
                             </div>
-                            <h3 class="text-base font-medium text-deep-charcoal">Neikvæðan huga</h3>
+                            <h3 class="text-sm sm:text-base font-medium text-deep-charcoal">Neikvæðan huga</h3>
                         </div>
                         
                         <div class="text-center reveal" style="transition-delay: 900ms;">
-                            <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                                <i class="fas fa-question-circle text-3xl text-custom-spiritual-dark"></i>
+                            <div class="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-3 sm:mb-4 flex items-center justify-center">
+                                <i class="fas fa-question-circle text-2xl sm:text-3xl text-custom-spiritual-dark"></i>
                             </div>
-                            <h3 class="text-base font-medium text-deep-charcoal">Efaðist um eigið ágæti</h3>
+                            <h3 class="text-sm sm:text-base font-medium text-deep-charcoal">Efaðist um eigið ágæti</h3>
                         </div>
                         
                         <div class="text-center reveal" style="transition-delay: 1000ms;">
-                            <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                                <i class="fas fa-arrow-down text-3xl text-custom-spiritual-dark"></i>
+                            <div class="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-3 sm:mb-4 flex items-center justify-center">
+                                <i class="fas fa-arrow-down text-2xl sm:text-3xl text-custom-spiritual-dark"></i>
                             </div>
-                            <h3 class="text-base font-medium text-deep-charcoal">Lágt sjálfsmat</h3>
+                            <h3 class="text-sm sm:text-base font-medium text-deep-charcoal">Lágt sjálfsmat</h3>
                         </div>
                         
                         <div class="text-center reveal" style="transition-delay: 1100ms;">
-                            <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                                <i class="fas fa-user-minus text-3xl text-custom-spiritual-dark"></i>
+                            <div class="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-3 sm:mb-4 flex items-center justify-center">
+                                <i class="fas fa-user-minus text-2xl sm:text-3xl text-custom-spiritual-dark"></i>
                             </div>
-                            <h3 class="text-base font-medium text-deep-charcoal">Að standa ekki með þér</h3>
+                            <h3 class="text-sm sm:text-base font-medium text-deep-charcoal">Að standa ekki með þér</h3>
                         </div>
                         
                         <div class="text-center reveal" style="transition-delay: 1200ms;">
-                            <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                                <i class="fas fa-volume-mute text-3xl text-custom-spiritual-dark"></i>
+                            <div class="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-3 sm:mb-4 flex items-center justify-center">
+                                <i class="fas fa-volume-mute text-2xl sm:text-3xl text-custom-spiritual-dark"></i>
                             </div>
-                            <h3 class="text-base font-medium text-deep-charcoal">Að bæla þig niður</h3>
+                            <h3 class="text-sm sm:text-base font-medium text-deep-charcoal">Að bæla þig niður</h3>
                         </div>
                         
 
@@ -583,11 +580,11 @@
                 
                 <!-- Final CTA Message -->
                 <div class="text-center reveal-zoom">
-                    <div class="bg-white rounded-3xl shadow-2xl p-12 max-w-4xl mx-auto">
-                        <h3 class="text-3xl md:text-4xl font-bold text-custom-spiritual-dark mb-6">Þá er þetta rétta námskeiðið fyrir þig</h3>
-                        <p class="text-deep-charcoal text-lg mb-8">Dýrmæt vegferð að þínu allra besta formi, finnum saman leiðina að þínu andlegu formi.</p>
-                        <a href="#namskeidid" class="inline-block bg-custom-spiritual-dark text-white px-10 py-4 rounded-full text-xl font-bold hover:bg-orange-600 transition duration-300 shadow-xl">
-                            <i class="fas fa-arrow-right mr-3"></i>Byrjaðu núna
+                    <div class="bg-white rounded-3xl shadow-2xl p-6 sm:p-8 lg:p-12 max-w-4xl mx-auto">
+                        <h3 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-custom-spiritual-dark mb-4 sm:mb-6">Þá er þetta rétta námskeiðið fyrir þig</h3>
+                        <p class="text-deep-charcoal text-base sm:text-lg mb-6 sm:mb-8">Dýrmæt vegferð að þínu allra besta formi, finnum saman leiðina að þínu andlegu formi.</p>
+                        <a href="#namskeidid" class="inline-block bg-custom-spiritual-dark text-white px-6 sm:px-8 lg:px-10 py-3 sm:py-4 rounded-full text-lg sm:text-xl font-bold hover:bg-orange-600 transition duration-300 shadow-xl">
+                            <i class="fas fa-arrow-right mr-2 sm:mr-3"></i>Byrjaðu núna
                         </a>
                     </div>
                 </div>
@@ -601,12 +598,12 @@
 
 
         <!-- Testimonials Section -->
-        <section id="umsagnir" class="py-20 bg-gray-50 spiritual-pattern">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-12 reveal-zoom">
-                    <h2 class="text-3xl md:text-4xl font-bold text-custom-spiritual-dark mb-2">Það Sem Viðskiptavinir Segja</h2>
+        <section id="umsagnir" class="py-16 sm:py-20 bg-gray-50 spiritual-pattern">
+            <div class="container mx-auto px-4 sm:px-6">
+                <div class="text-center mb-8 sm:mb-12 reveal-zoom">
+                    <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-custom-spiritual-dark mb-2">Það Sem Viðskiptavinir Segja</h2>
                 </div>
-                <div class="grid md:grid-cols-2 gap-10">
+                <div class="grid md:grid-cols-2 gap-6 sm:gap-8 lg:gap-10">
                     <div class="reveal-left">
                         <img src="img/testimonial-1.png" alt="Umsögn 1" class="w-full rounded-2xl shadow-lg">
                     </div>
@@ -618,17 +615,17 @@
         </section>
 
         <!-- Course Details Section -->
-        <section id="namskeidid" class="py-24 bg-gradient-to-br from-gray-50 via-custom-spiritual to-gray-50">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-16 reveal-zoom">
-                    <div class="w-24 h-1 bg-custom-spiritual-dark mx-auto mb-8"></div>
-                    <h2 class="text-4xl md:text-6xl font-bold text-custom-spiritual-dark mb-8">Andleg Einkaþjálfun - Námskeið</h2>
-                    <p class="text-deep-charcoal text-xl max-w-5xl mx-auto leading-relaxed">12 mánaða markviss þjálfun sem breytir lífinu þínu</p>
-                    <div class="w-24 h-1 bg-custom-spiritual-dark mx-auto mt-8"></div>
+        <section id="namskeidid" class="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-gray-50 via-custom-spiritual to-gray-50">
+            <div class="container mx-auto px-4 sm:px-6">
+                <div class="text-center mb-12 sm:mb-16 reveal-zoom">
+                    <div class="w-24 h-1 bg-custom-spiritual-dark mx-auto mb-6 sm:mb-8"></div>
+                    <h2 class="text-3xl sm:text-4xl lg:text-6xl font-bold text-custom-spiritual-dark mb-6 sm:mb-8">Andleg Einkaþjálfun - Námskeið</h2>
+                    <p class="text-deep-charcoal text-lg sm:text-xl max-w-5xl mx-auto leading-relaxed">12 mánaða markviss þjálfun sem breytir lífinu þínu</p>
+                    <div class="w-24 h-1 bg-custom-spiritual-dark mx-auto mt-6 sm:mt-8"></div>
                 </div>
                 
                 <div class="max-w-7xl mx-auto">
-                    <div class="grid lg:grid-cols-2 gap-16 items-center mb-16">
+                    <div class="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center mb-12 sm:mb-16">
                         <div class="reveal-left">
                             <div class="relative">
                                 <img src="img/okaytobeyourself.png" alt="Okay to be yourself" class="w-full rounded-3xl shadow-2xl">
@@ -636,14 +633,14 @@
                             </div>
                         </div>
                         <div class="reveal-right">
-                            <h3 class="text-3xl font-bold text-custom-spiritual-dark mb-8">Um námskeiðið</h3>
-                            <p class="text-deep-charcoal text-lg mb-6 leading-relaxed">
+                            <h3 class="text-2xl sm:text-3xl font-bold text-custom-spiritual-dark mb-6 sm:mb-8">Um námskeiðið</h3>
+                            <p class="text-deep-charcoal text-base sm:text-lg mb-4 sm:mb-6 leading-relaxed">
                                 Námskeiðið fer fram í gegnum netið og þú færð aðgang að innri vef með mikilvægum fróðleik, verkefnum, hljóð- og mynd upptökum og ýmsu öðru skemmtilegu. Námskeiðið er ætlað öllum kynjum.
                             </p>
-                            <p class="text-deep-charcoal text-lg mb-6 leading-relaxed">
+                            <p class="text-deep-charcoal text-base sm:text-lg mb-4 sm:mb-6 leading-relaxed">
                                 Ég deili síðan einnig reynslusögum úr mínu lífi og hvernig ég hef nýtt þetta nám fyrir mig og mitt líf, en hér áður var ég að fást við, kvíða, sjálfsniðurrif af ýmsu tagi, efaðist um eigið ágæti, fannst ég oft vera fyrir og ekki eiga skilið allt það fallega sem lífið færði mér.
                             </p>
-                            <p class="text-deep-charcoal text-lg leading-relaxed">
+                            <p class="text-deep-charcoal text-base sm:text-lg leading-relaxed">
                                 Á námskeiðinu færðu aðgang að vefsvæði þar sem nýtt efni er aðgengilegt 1. hvers mánaðar og sett upp þannig að þú færð einn mánuð í einu til að vinna þetta algjörlega á þínum hraða.
                             </p>
                         </div>
@@ -656,56 +653,56 @@
                         </p>
                     </div>
 
-                    <div class="grid md:grid-cols-2 gap-8 mb-12">
+                    <div class="grid md:grid-cols-2 gap-6 sm:gap-8 mb-12">
                         <div class="reveal-left">
-                            <div class="bg-gray-50 rounded-2xl p-8 shadow-lg">
-                                <h3 class="text-2xl font-bold text-custom-spiritual-dark mb-6">Námskeiðið inniheldur:</h3>
-                                <ul class="space-y-4 text-deep-charcoal">
+                            <div class="bg-gray-50 rounded-2xl p-6 sm:p-8 shadow-lg">
+                                <h3 class="text-xl sm:text-2xl font-bold text-custom-spiritual-dark mb-4 sm:mb-6">Námskeiðið inniheldur:</h3>
+                                <ul class="space-y-3 sm:space-y-4 text-deep-charcoal">
                                 <li class="flex items-start">
-                                    <i class="fas fa-check-circle text-leaf-green text-xl mr-3 mt-1"></i>
-                                    <span>12 mánaða aðgang að leiðbeinanda í gegnum tölvupóst</span>
+                                    <i class="fas fa-check-circle text-leaf-green text-lg sm:text-xl mr-3 mt-1"></i>
+                                    <span class="text-sm sm:text-base">12 mánaða aðgang að leiðbeinanda í gegnum tölvupóst</span>
                                 </li>
                                 <li class="flex items-start">
-                                    <i class="fas fa-check-circle text-leaf-green text-xl mr-3 mt-1"></i>
-                                    <span>12 einkatímar í gegnum netið - 60 mínútna einkatími einu sinni mánuði</span>
+                                    <i class="fas fa-check-circle text-leaf-green text-lg sm:text-xl mr-3 mt-1"></i>
+                                    <span class="text-sm sm:text-base">12 einkatímar í gegnum netið - 60 mínútna einkatími einu sinni mánuði</span>
                                 </li>
                                 <li class="flex items-start">
-                                    <i class="fas fa-check-circle text-leaf-green text-xl mr-3 mt-1"></i>
-                                    <span>12 mánaða stuðning og hvatningu frá leiðbeinanda</span>
+                                    <i class="fas fa-check-circle text-leaf-green text-lg sm:text-xl mr-3 mt-1"></i>
+                                    <span class="text-sm sm:text-base">12 mánaða stuðning og hvatningu frá leiðbeinanda</span>
                                 </li>
                                 <li class="flex items-start">
-                                    <i class="fas fa-check-circle text-leaf-green text-xl mr-3 mt-1"></i>
-                                    <span>12 mánaða aðgang að innri vef sem er stútfullur af fróðleik, verkefnum og fleiru</span>
+                                    <i class="fas fa-check-circle text-leaf-green text-lg sm:text-xl mr-3 mt-1"></i>
+                                    <span class="text-sm sm:text-base">12 mánaða aðgang að innri vef sem er stútfullur af fróðleik, verkefnum og fleiru</span>
                                 </li>
                                 <li class="flex items-start">
-                                    <i class="fas fa-check-circle text-leaf-green text-xl mr-3 mt-1"></i>
-                                    <span>Persónulega nálgun þar sem leiðbeinandi deilir einnig reynslusögum úr sínu lífi</span>
+                                    <i class="fas fa-check-circle text-leaf-green text-lg sm:text-xl mr-3 mt-1"></i>
+                                    <span class="text-sm sm:text-base">Persónulega nálgun þar sem leiðbeinandi deilir einnig reynslusögum úr sínu lífi</span>
                                 </li>
                                 <li class="flex items-start">
-                                    <i class="fas fa-check-circle text-leaf-green text-xl mr-3 mt-1"></i>
-                                    <span>Öll gögn sem innhelda mikilvægan fróðleik, verkefni, hljóð- og myndupptökur, ásamt hugmyndum af bókum, bíómyndum, fyrirlestrum og ótal mörgu öðru</span>
+                                    <i class="fas fa-check-circle text-leaf-green text-lg sm:text-xl mr-3 mt-1"></i>
+                                    <span class="text-sm sm:text-base">Öll gögn sem innhelda mikilvægan fróðleik, verkefni, hljóð- og myndupptökur, ásamt hugmyndum af bókum, bíómyndum, fyrirlestrum og ótal mörgu öðru</span>
                                 </li>
                             </ul>
                             </div>
                         </div>
                         <div class="reveal-right center-align justify-center">
-                            <div class="bg-white rounded-2xl p-8 shadow-lg mt-16">
-                                <h3 class="text-2xl font-bold text-custom-spiritual-dark mb-6 text-center">Verð</h3>
+                            <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-lg mt-8 sm:mt-16">
+                                <h3 class="text-xl sm:text-2xl font-bold text-custom-spiritual-dark mb-4 sm:mb-6 text-center">Verð</h3>
                                 <div class="text-center">
-                                    <div class="text-4xl font-bold text-custom-spiritual-dark mb-2">258.000 kr.</div>
-                                    <p class="text-deep-charcoal mb-4">Heildarverð fyrir í heilt ár</p>
-                                    <div class="text-2xl font-semibold text-leaf-green mb-6">21.500 kr. á mánuði</div>
-                                    <p class="text-deep-charcoal text-sm">(miðað við 12 mánaða greiðsludreifingu)</p>
+                                    <div class="text-3xl sm:text-4xl font-bold text-custom-spiritual-dark mb-2">258.000 kr.</div>
+                                    <p class="text-deep-charcoal mb-4 text-sm sm:text-base">Heildarverð fyrir í heilt ár</p>
+                                    <div class="text-xl sm:text-2xl font-semibold text-leaf-green mb-4 sm:mb-6">21.500 kr. á mánuði</div>
+                                    <p class="text-deep-charcoal text-xs sm:text-sm">(miðað við 12 mánaða greiðsludreifingu)</p>
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     <div class="text-center reveal center-align justify-center">
-                        <a href="mailto:andlegeinkathjalfun.inga@gmail.com?subject=Skráning í Andlega Einkaþjálfun&body=Sæl Inga,%0D%0A%0D%0AÉg vil skrá mig í námskeiðið þitt í andlegri einkaþjálfun og byrja mína ferð að innri frið og krafti.%0D%0A%0D%0AÉg hlakka til að heyra frá þér!%0D%0A%0D%0ABestu kveðjur," class="inline-block bg-custom-spiritual-dark text-white px-8 py-4 rounded-full text-xl font-bold hover:bg-orange-600 transition duration-300 shadow-xl">
-                            <i class="fas fa-envelope mr-3"></i>Skráðu þig núna
+                        <a href="mailto:andlegeinkathjalfun.inga@gmail.com?subject=Skráning í Andlega Einkaþjálfun&body=Sæl Inga,%0D%0A%0D%0AÉg vil skrá mig í námskeiðið þitt í andlegri einkaþjálfun og byrja mína ferð að innri frið og krafti.%0D%0A%0D%0AÉg hlakka til að heyra frá þér!%0D%0A%0D%0ABestu kveðjur," class="inline-block bg-custom-spiritual-dark text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full text-lg sm:text-xl font-bold hover:bg-orange-600 transition duration-300 shadow-xl">
+                            <i class="fas fa-envelope mr-2 sm:mr-3"></i>Skráðu þig núna
                         </a>
-                        <p class="text-deep-charcoal mt-4">Allar frekari upplýsingar og skráning: andlegeinkathjalfun.inga@gmail.com</p>
+                        <p class="text-deep-charcoal mt-4 text-sm sm:text-base">Allar frekari upplýsingar og skráning: andlegeinkathjalfun.inga@gmail.com</p>
                     </div>
                 </div>
             </div>
@@ -714,56 +711,56 @@
 
 
         <!-- Contact Section -->
-        <section id="samband" class="py-20 bg-custom-spiritual spiritual-pattern">
-            <div class="container mx-auto px-6">
+        <section id="samband" class="py-16 sm:py-20 bg-custom-spiritual spiritual-pattern">
+            <div class="container mx-auto px-4 sm:px-6">
                 <div class="flex flex-wrap items-center -mx-4">
                     <!-- Logo on the left -->
-                    <div class="w-full md:w-2/5 px-4 mb-8 md:mb-0 reveal-left">
-                        <div class="flex justify-center md:justify-start items-center h-full">
-                            <img src="img/logo.png" alt="Inga Birna Logo" class="h-72 w-72 md:h-96 md:w-96">
+                    <div class="w-full lg:w-2/5 px-4 mb-8 lg:mb-0 reveal-left">
+                        <div class="flex justify-center lg:justify-start items-center h-full">
+                            <img src="img/logo.png" alt="Inga Birna Logo" class="h-48 w-48 sm:h-64 sm:w-64 lg:h-72 lg:w-72 xl:h-96 xl:w-96">
                         </div>
                     </div>
                     
                     <!-- Contact content on the right -->
-                    <div class="w-full md:w-3/5 px-4 reveal-right">
+                    <div class="w-full lg:w-3/5 px-4 reveal-right">
                         <!-- CTA Section -->
-                        <div class="text-center mb-8">
-                            <h2 class="text-3xl md:text-4xl font-bold text-custom-spiritual-dark mb-2">Tilbúin til að byrja þína breytingu?</h2>
-                            <p class="text-deep-charcoal max-w-2xl mx-auto mb-6">Það er engin betri tími en núna til að byrja þína ferð að innri frið og kraft. Hafðu samband og við finnum besta tímann fyrir þig.</p>
+                        <div class="text-center mb-6 sm:mb-8">
+                            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-custom-spiritual-dark mb-2">Tilbúin til að byrja þína breytingu?</h2>
+                            <p class="text-deep-charcoal max-w-2xl mx-auto mb-6 text-sm sm:text-base">Það er engin betri tími en núna til að byrja þína ferð að innri frið og kraft. Hafðu samband og við finnum besta tímann fyrir þig.</p>
                         </div>
                         
                         <!-- Booking Button -->
                         <div class="reveal mb-6 text-center">
-                            <a href="mailto:andlegeinkathjalfun.inga@gmail.com?subject=Skráning í Andlega Einkaþjálfun&body=Sæl Inga,%0D%0A%0D%0AÉg vil skrá mig í námskeiðið þitt í andlegri einkaþjálfun og byrja mína ferð að innri frið og krafti.%0D%0A%0D%0AÉg hlakka til að heyra frá þér!%0D%0A%0D%0ABestu kveðjur," class="inline-block bg-custom-spiritual-dark text-white py-4 px-6 rounded-full text-xl font-bold cta-button">
-                                <i class="fas fa-calendar-check mr-3"></i>Bókaðu þinn fyrsta tíma
+                            <a href="mailto:andlegeinkathjalfun.inga@gmail.com?subject=Skráning í Andlega Einkaþjálfun&body=Sæl Inga,%0D%0A%0D%0AÉg vil skrá mig í námskeiðið þitt í andlegri einkaþjálfun og byrja mína ferð að innri frið og krafti.%0D%0A%0D%0AÉg hlakka til að heyra frá þér!%0D%0A%0D%0ABestu kveðjur," class="inline-block bg-custom-spiritual-dark text-white py-3 sm:py-4 px-4 sm:px-6 rounded-full text-lg sm:text-xl font-bold cta-button">
+                                <i class="fas fa-calendar-check mr-2 sm:mr-3"></i>Bókaðu þinn fyrsta tíma
                             </a>
                         </div>
                         
-                        <p class="text-deep-charcoal my-8 reveal text-center">Það er aldrei of seint til að byrja að lifa lífinu sem þú dreymir um!</p>
+                        <p class="text-deep-charcoal my-6 sm:my-8 reveal text-center text-sm sm:text-base">Það er aldrei of seint til að byrja að lifa lífinu sem þú dreymir um!</p>
 
                         <!-- Social and Contact Links -->
-                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 max-w-6xl mx-auto">
                             <div class="reveal" style="transition-delay: 200ms;">
-                                <a href="mailto:andlegeinkathjalfun.inga@gmail.com?subject=Skráning í Andlega Einkaþjálfun&body=Sæl Inga,%0D%0A%0D%0AÉg vil skrá mig í námskeiðið þitt í andlegri einkaþjálfun og byrja mína ferð að innri frið og krafti.%0D%0A%0D%0AÉg hlakka til að heyra frá þér!%0D%0A%0D%0ABestu kveðjur," class="block bg-white p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-custom-spiritual-dark transform hover:scale-105">
+                                <a href="mailto:andlegeinkathjalfun.inga@gmail.com?subject=Skráning í Andlega Einkaþjálfun&body=Sæl Inga,%0D%0A%0D%0AÉg vil skrá mig í námskeiðið þitt í andlegri einkaþjálfun og byrja mína ferð að innri frið og krafti.%0D%0A%0D%0AÉg hlakka til að heyra frá þér!%0D%0A%0D%0ABestu kveðjur," class="block bg-white p-6 sm:p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-custom-spiritual-dark transform hover:scale-105">
                                     <div class="text-center">
-                                        <i class="fas fa-envelope text-5xl text-custom-spiritual-dark mb-4"></i>
-                                        <h3 class="text-2xl font-bold text-custom-spiritual-dark">Senda Póst</h3>
+                                        <i class="fas fa-envelope text-4xl sm:text-5xl text-custom-spiritual-dark mb-3 sm:mb-4"></i>
+                                        <h3 class="text-lg sm:text-xl lg:text-2xl font-bold text-custom-spiritual-dark">Senda Póst</h3>
                                     </div>
                                 </a>
                             </div>
                             <div class="reveal" style="transition-delay: 300ms;">
-                                <a href="https://www.facebook.com/profile.php?id=61568223246449" target="_blank" class="block bg-white p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-custom-spiritual-dark transform hover:scale-105">
+                                <a href="https://www.facebook.com/profile.php?id=61568223246449" target="_blank" class="block bg-white p-6 sm:p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-custom-spiritual-dark transform hover:scale-105">
                                     <div class="text-center">
-                                        <i class="fab fa-facebook text-5xl text-custom-spiritual-dark mb-4"></i>
-                                        <h3 class="text-2xl font-bold text-custom-spiritual-dark">Facebook</h3>
+                                        <i class="fab fa-facebook text-4xl sm:text-5xl text-custom-spiritual-dark mb-3 sm:mb-4"></i>
+                                        <h3 class="text-lg sm:text-xl lg:text-2xl font-bold text-custom-spiritual-dark">Facebook</h3>
                                     </div>
                                 </a>
                             </div>
                             <div class="reveal" style="transition-delay: 400ms;">
-                                <a href="https://m.me/61568223246449" target="_blank" class="block bg-white p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-custom-spiritual-dark transform hover:scale-105">
+                                <a href="https://m.me/61568223246449" target="_blank" class="block bg-white p-6 sm:p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-custom-spiritual-dark transform hover:scale-105 sm:col-span-2 lg:col-span-1">
                                     <div class="text-center">
-                                        <i class="fab fa-facebook-messenger text-5xl text-custom-spiritual-dark mb-4"></i>
-                                        <h3 class="text-2xl font-bold text-custom-spiritual-dark">Messenger</h3>
+                                        <i class="fab fa-facebook-messenger text-4xl sm:text-5xl text-custom-spiritual-dark mb-3 sm:mb-4"></i>
+                                        <h3 class="text-lg sm:text-xl lg:text-2xl font-bold text-custom-spiritual-dark">Messenger</h3>
                                     </div>
                                 </a>
                             </div>
